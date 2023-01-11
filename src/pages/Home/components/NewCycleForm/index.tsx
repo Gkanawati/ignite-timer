@@ -48,8 +48,8 @@ export function NewCycleForm() {
       />
 
       <datalist id="task-suggestions">
-        <option value="Estudar Ignite" />
-        <option value="Finalizar Projeto IgniteTimer" />
+        <option value="Estudar" />
+        <option value="Trabalhar" />
       </datalist>
 
       <label htmlFor="minutesAmount">durante</label>
