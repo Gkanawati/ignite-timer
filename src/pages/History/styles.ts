@@ -10,6 +10,16 @@ export const HistoryContainer = styled.div`
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']};
   }
+
+  @media (max-width: 767px) {
+    & {
+      padding: 1rem;
+
+      h1 {
+        margin-top: 1rem;
+      }
+    }
+  }
 `
 
 export const HistoryList = styled.div`
@@ -17,6 +27,12 @@ export const HistoryList = styled.div`
   overflow: auto;
   margin-top: 2rem;
   overflow: hidden;
+
+    @media (max-width: 767px) {
+    & {
+      overflow: scroll;
+    }
+  }
 
   table {
     width: 100%;
@@ -53,6 +69,12 @@ export const HistoryList = styled.div`
       &:first-child {
         padding-left: 1.5rem;
         width: 50%;
+      }
+
+      @media (max-width: 767px) {
+      &:first-child {
+          width: auto;
+        }
       }
 
       &:last-child {

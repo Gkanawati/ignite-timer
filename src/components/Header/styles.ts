@@ -29,4 +29,18 @@ export const HeaderContainer = styled.header`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    & {
+      img {
+        width: 2rem;
+      }
+      nav {
+        a {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
 `

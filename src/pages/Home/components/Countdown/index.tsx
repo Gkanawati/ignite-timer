@@ -39,6 +39,7 @@ export function Countdown() {
         )
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
+          document.title = `🎉 Ciclo Finalizado 🎉`
           setSecondsPassed(totalSeconds)
           clearInterval(interval)
         } else {
