@@ -3,7 +3,11 @@ import { CountdownContainer, Separator } from './styles'
 import { differenceInSeconds } from 'date-fns'
 import { CyclesContext } from '../../../../contexts/CyclesContext'
 
-export function Countdown() {
+interface CountdownProps {
+  handleVisibleFinishedText: () => void
+}
+
+export function Countdown({ handleVisibleFinishedText }: CountdownProps) {
   const {
     activeCycle,
     activeCycleId,
@@ -39,7 +43,8 @@ export function Countdown() {
         )
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
-          document.title = `🎉 Ciclo Finalizado 🎉`
+          document.title = `🎉 CICLO FINALIZADO! 🎉`
+          handleVisibleFinishedText()
           setSecondsPassed(totalSeconds)
           clearInterval(interval)
         } else {

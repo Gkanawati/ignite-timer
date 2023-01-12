@@ -52,3 +52,11 @@ export const StopCountdownButton = styled(BaseCountdownButton)`
     box-shadow: 0 0 0 2px ${(props) => props.theme['red-500']};
   }
 `
+export const FinishedContainerAlert = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+`

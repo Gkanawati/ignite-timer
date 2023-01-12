@@ -14,8 +14,7 @@ export const FormContainer = styled.div`
   @media (max-width: 767px) {
     & {
       width: 100%;
-      margin-top: 2rem;
-      font-size: 1rem;
+      justify-content: flex-start;
     }
   }
 `

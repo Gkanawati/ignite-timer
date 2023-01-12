@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import { HandPalm, Play } from 'phosphor-react'
+import { useContext, useState } from 'react'
+import { Confetti, HandPalm, Play } from 'phosphor-react'
 
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -9,6 +9,7 @@ import { NewCycleForm } from './components/NewCycleForm'
 import { Countdown } from './components/Countdown'
 
 import {
+  FinishedContainerAlert,
   HomeContainer,
   StartCountdownButton,
   StopCountdownButton,
@@ -26,6 +27,7 @@ const newCycleFormValidationSchema = zod.object({
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
 export function Home() {
+  const [finishedCycle, setFinishedCycle] = useState(0)
   const { activeCycle, createNewCycle, interruptCurrentCycle } =
     useContext(CyclesContext)
 
@@ -47,6 +49,10 @@ export function Home() {
   const task = watch('task')
   const isSubmitDisabled = !task
 
+  function handleVisibleFinishedText() {
+    setFinishedCycle(1)
+  }
+
   return (
     <HomeContainer>
       <form onSubmit={handleSubmit(handleCreateNewCycle)}>
@@ -54,7 +60,7 @@ export function Home() {
           <NewCycleForm />
         </FormProvider>
 
-        <Countdown />
+        <Countdown handleVisibleFinishedText={handleVisibleFinishedText} />
 
         {activeCycle ? (
           <StopCountdownButton onClick={interruptCurrentCycle} type="button">
@@ -68,6 +74,13 @@ export function Home() {
           </StartCountdownButton>
         )}
       </form>
+      {!!finishedCycle && !activeCycle && (
+        <FinishedContainerAlert>
+          <Confetti size={28} />
+          CICLO FINALIZADO!
+          <Confetti size={28} />
+        </FinishedContainerAlert>
+      )}
     </HomeContainer>
   )
 }
