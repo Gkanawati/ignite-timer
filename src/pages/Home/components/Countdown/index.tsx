@@ -2,6 +2,7 @@ import { useContext, useEffect } from 'react'
 import { CountdownContainer, Separator } from './styles'
 import { differenceInSeconds } from 'date-fns'
 import { CyclesContext } from '../../../../contexts/CyclesContext'
+import victorySound from '../../../../assets/sounds/Victory.wav'
 
 interface CountdownProps {
   handleVisibleFinishedText: () => void
@@ -42,6 +43,7 @@ export function Countdown({ handleVisibleFinishedText }: CountdownProps) {
           new Date(activeCycle.startDate),
         )
         if (secondsDifference >= totalSeconds) {
+          new Audio(victorySound).play()
           markCurrentCycleAsFinished()
           document.title = `🎉 CICLO FINALIZADO! 🎉`
           handleVisibleFinishedText()
