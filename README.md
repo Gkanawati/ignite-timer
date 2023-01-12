@@ -11,7 +11,7 @@ O site foi construído utilizando Vite com React para a construção das página
 Funcionalidades Adicionais.
 Como adicionais nesse projeto que não estavam no curso eu apliquei:
 - Responsividade em todos os dispositivos 
-Recursos para avisar o usuário o término do Ciclo:
+- Recursos para avisar o usuário o término do Ciclo:
 - Som emitido ao concluir uma tarefa 
 - Componente em tela na Home que informa que o ciclo foi concluído 
 - Título da Página alterado ao finalizar o Ciclo
@@ -42,8 +42,6 @@ Recursos para avisar o usuário o término do Ciclo:
 ## :computer::iphone: Telas
 
 <div align='center'>
-
-<h3>Plataforma Web - Utilizada na cozinha</h3>
 
 ![Ignite-Timer-Web1](https://user-images.githubusercontent.com/87530595/211960019-eca828ff-14a2-4656-b9c7-92976a3e52f5.png)
 
