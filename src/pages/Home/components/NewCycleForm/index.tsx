@@ -48,8 +48,9 @@ export function NewCycleForm() {
       />
 
       <datalist id="task-suggestions">
-        <option value="Estudar" />
-        <option value="Trabalhar" />
+        <option value="📖 Estudar " />
+        <option value="🧑‍💻 Trabalhar em " />
+        <option value="☕️ Pausa/Descanso" />
       </datalist>
 
       <label htmlFor="minutesAmount">durante</label>
